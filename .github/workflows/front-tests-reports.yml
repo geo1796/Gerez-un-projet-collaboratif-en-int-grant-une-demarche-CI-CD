@@ -31,3 +31,9 @@ jobs:
       - name: Run tests and generate reports
         working-directory: front
         run: ng test --browsers ChromeHeadless --watch=false --code-coverage
+
+      - name: Upload reports
+        uses: actions/upload-artifact@v2
+        with:
+          name: Test Reports
+          path: front/coverage/
